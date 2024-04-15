@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  color: rgb(255, 255, 255);
+  background: #0c0c0c url("/assets/img/bg-circles.svg") repeat-y center center;
+  background-size: 100% auto;
+  font-family: "Mulish", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a, #requirements li a, #requirements li span {
+  font-family: "Akshar", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+a {
+  cursor: pointer;
+}
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-section {
+  text-align: center;
+  height: 100svh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/assets/img/bg-games-opaque-lg.jpg") no-repeat center top 0px;
+  background-size: cover;
+}
+.main-section .logo {
+  margin: auto;
+  margin-bottom: 32px;
+  display: inline-block;
+}
+.main-section h1 {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+.main-section h1 b {
+  color: #ff530f;
+}
+.main-section .cta {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta {
+  color: #ff530f;
+  border: solid thin #ff530f;
+  padding: 24px 32px;
+}
+.cta:hover {
+  background-color: #ff530f;
+  color: #0c0c0c;
+}
+
+#installation, #gallery {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.72s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.72s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.animate {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
+#installation {
+  padding: 64px 16px;
+}
+#installation .inner-content {
+  max-width: 900px;
+  margin: auto;
+}
+#installation .inner-content #requirements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media all and (max-width: 720px) {
+  #installation .inner-content #requirements {
+    display: block;
+  }
+  #installation .inner-content #requirements li {
+    display: block;
+  }
+}
+#installation .inner-content #requirements li {
+  flex: 1 1;
+}
+#installation .inner-content #requirements li a, #installation .inner-content #requirements li span {
+  display: block;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #191919;
+  text-align: center;
+  border: solid 2px transparent;
+}
+#installation .inner-content #requirements li a:hover {
+  box-shadow: 0px 0px 18px -8px #ff530f;
+  color: #ff530f;
+  border-color: #ff530f;
+}
+#installation .inner-content #requirements li a {
+  background: url("/assets/img/link-icon.svg") no-repeat center left 16px;
+  background-size: auto 150%;
+  background-color: #191919;
+}
+#installation .inner-content h2 {
+  font-size: 3rem;
+  color: #ff530f;
+  margin-bottom: 32px;
+}
+#installation .inner-content h3 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+#installation .inner-content h4 {
+  font-size: 1.5rem;
+}
+#installation .inner-content ul {
+  padding: 16px;
+}
+#installation .inner-content ul li {
+  padding: 16px 8px;
+}
+#installation .inner-content p {
+  line-height: 1.75rem;
+}
+#installation .inner-content code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #191919;
+  display: table;
+  padding: 4px;
+}
+
+.content-section {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.content-section h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #ff530f;
+}
+.content-section .screen-1 {
+  display: table;
+  width: 85%;
+  max-width: 1080px;
+  margin: 24px auto;
+  border-radius: 16px;
+  transition: transform 0.42s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.content-section .screen-1:hover {
+  transform: skewY(1deg);
+}
+.content-section .images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  max-width: 970px;
+  margin: auto;
+}
+.content-section .images:hover a {
+  opacity: 0.55;
+}
+.content-section .images:hover a:hover {
+  opacity: 1;
+}
+.content-section .images a {
+  display: block;
+  width: 300px;
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 8px;
+  margin: 8px;
+  border: solid thin #191919;
+  transition: opacity 0.32s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/* Footer Styles */
+.footer {
+  max-width: 1280px;
+  margin-top: 128px;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+  /* Footer Content */
+  /* Disclaimer Styles */
+}
+.footer .footer-content {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Footer Section */
+}
+.footer .footer-content .footer-section {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+  /* Section Title */
+  /* List Styles */
+  /* Anchor Styles */
+}
+.footer .footer-content .footer-section .section-title {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+.footer .footer-content .footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .footer-content .footer-section li {
+  margin-bottom: 8px;
+}
+.footer .footer-content .footer-section a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.footer .footer-content .footer-section a:hover {
+  color: #ff530f;
+}
+.footer .disclaimer {
+  font-weight: bold;
+  margin-top: 16px;
+  display: block;
+  font-size: small;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
