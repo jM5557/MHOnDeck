@@ -203,7 +203,7 @@ a {
     }
     
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         margin-bottom: $val4;
 
         b {
@@ -211,10 +211,69 @@ a {
         }
     }
 
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
     .cta {
         display: inline-block;
         margin-top: $val6;
         color: $accentColor;
+    }
+}
+
+.downloads {
+    padding: $val4;
+    
+    h4 {
+        font-size: 2rem;
+    }
+
+    #quick-setup, #manual-setup {
+        background-color: rgba(12,12,12,0.63);
+        margin-top: $val4;
+        padding: $val4 $val4;
+        border-radius: $val2;
+
+        h3 {
+            b { 
+                display: inline-block; 
+                background-color: #343434;
+                font-weight: 400;
+                padding: $val2 $val4;
+                border-radius: 500px;
+                margin-left: 4px;
+                font-size: small;
+            }
+
+        }
+
+        small {
+            font-size: small;
+            max-width: 320px;
+            line-height: 1.5rem;
+            display: table;
+            margin: auto;
+        }
+    }
+
+    #quick-setup {
+        border: solid thin $accentColor;
+
+        button {
+            display: table;
+            width: 75%;
+            max-width: 420px;
+            margin: $val4 auto;
+        }
+
+        h3 {
+            b {
+                background-color: $accentColor;
+                color: $backgroundStartRGB;
+            }
+        }
     }
 }
 
@@ -227,6 +286,8 @@ section h2 {
     color: $accentColor;
     border: solid thin $accentColor;
     padding: $val6 $val8;
+    background-color: transparent;
+    cursor: pointer;
 
     &:hover {
         background-color: $accentColor;

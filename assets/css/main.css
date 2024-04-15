@@ -185,16 +185,62 @@ a, a:visited {
   display: inline-block;
 }
 .main-section h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 16px;
 }
 .main-section h1 b {
   color: #ff530f;
 }
+.main-section h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
 .main-section .cta {
   display: inline-block;
   margin-top: 24px;
   color: #ff530f;
+}
+
+.downloads {
+  padding: 16px;
+}
+.downloads h4 {
+  font-size: 2rem;
+}
+.downloads #quick-setup, .downloads #manual-setup {
+  background-color: rgba(12, 12, 12, 0.63);
+  margin-top: 16px;
+  padding: 16px 16px;
+  border-radius: 8px;
+}
+.downloads #quick-setup h3 b, .downloads #manual-setup h3 b {
+  display: inline-block;
+  background-color: #343434;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 500px;
+  margin-left: 4px;
+  font-size: small;
+}
+.downloads #quick-setup small, .downloads #manual-setup small {
+  font-size: small;
+  max-width: 320px;
+  line-height: 1.5rem;
+  display: table;
+  margin: auto;
+}
+.downloads #quick-setup {
+  border: solid thin #ff530f;
+}
+.downloads #quick-setup button {
+  display: table;
+  width: 75%;
+  max-width: 420px;
+  margin: 16px auto;
+}
+.downloads #quick-setup h3 b {
+  background-color: #ff530f;
+  color: #0c0c0c;
 }
 
 section h2 {
@@ -206,6 +252,8 @@ section h2 {
   color: #ff530f;
   border: solid thin #ff530f;
   padding: 24px 32px;
+  background-color: transparent;
+  cursor: pointer;
 }
 .cta:hover {
   background-color: #ff530f;
