@@ -194,6 +194,7 @@ a, a:visited {
 .main-section .cta {
   display: inline-block;
   margin-top: 24px;
+  color: #ff530f;
 }
 
 section h2 {
@@ -228,6 +229,12 @@ section h2 {
 #installation .inner-content {
   max-width: 900px;
   margin: auto;
+}
+#installation .inner-content .text-content img {
+  display: table;
+  margin: 16px auto;
+  width: auto;
+  max-width: 75%;
 }
 #installation .inner-content #requirements {
   display: flex;
@@ -338,6 +345,21 @@ section h2 {
   transition: opacity 0.32s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
+/* Responsive Video Styles */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Footer Styles */
 .footer {
   max-width: 1280px;
@@ -386,8 +408,11 @@ section h2 {
 }
 .footer .disclaimer {
   font-weight: bold;
-  margin-top: 16px;
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   font-size: small;
   text-align: center;
+  max-width: 720px;
 }/*# sourceMappingURL=main.css.map */
