@@ -163,7 +163,7 @@ h4,
 h5,
 h6,
 button,
-a, #requirements li a, #requirements li span {
+a, .requirements li a, .requirements li span {
     font-family: 'Akshar', sans-serif;
 }
 
@@ -185,6 +185,19 @@ a {
     }
 }
 
+.side-by-side {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    flex-flow: row wrap;
+
+    @media all and (max-width: 800px) {
+        display: block;
+    }
+}
+
+
 .main-section {
     text-align: center;
     min-height: 100svh;
@@ -194,8 +207,15 @@ a {
     justify-content: center;
     padding-top: 24px;
 
-    background: url("/assets/img/bg-games-opaque-lg.jpg") no-repeat center top 0px;
+    background: url("/assets/img/bg-games-opaque-lg.jpg") no-repeat center top 0px fixed;
     background-size: cover;
+
+    .headings {
+       flex: 1;
+       text-align: left;
+       margin-right: 32px;
+       padding: 16px;
+    }
 
     .logo {
         margin: auto;
@@ -204,8 +224,9 @@ a {
     }
     
     h1 {
-        font-size: 3rem;
+        font-size: 5rem;
         margin-bottom: $val4;
+        text-transform: uppercase;
 
         b {
             color: $accentColor;
@@ -222,20 +243,47 @@ a {
         margin-top: $val6;
         color: $accentColor;
     }
+
+    @media all and (max-width: 900px) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            line-height: 1.5rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    @media all and (max-width: 900px) {
+        h1 {
+            font-size: 2.65rem;
+        }
+
+        h2 {
+            line-height: 1.75rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media all and (max-width: 780px) {
+        .side-by-side {
+            display: block;
+
+            .headings {
+                margin-right: auto;
+            }
+        }
+    }
 }
 
 .downloads {
     padding: $val4;
-
-    h4 {
-        font-size: 2rem;
-    }
+    background-color: rgba(12,12,12,0.63);
+    border-radius: $val2;
 
     #quick-setup, #manual-setup {
-        background-color: rgba(12,12,12,0.63);
-        margin-top: $val4;
         padding: $val4 $val4;
-        border-radius: $val2;
 
         h3 {
             b { 
@@ -260,12 +308,11 @@ a {
     }
 
     #quick-setup {
-        border: solid thin $accentColor;
-
         button {
             display: table;
-            width: 75%;
+            width: 100%;
             max-width: 420px;
+            font-size: 1.25rem;
             margin: $val4 auto;
         }
 
@@ -275,6 +322,28 @@ a {
                 color: $backgroundStartRGB;
             }
         }
+
+        @media all and (max-width: 900px) {
+            button {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    #manual-setup {
+        margin-top: $val4;
+
+        .cta {
+            padding: $val4 $val4;
+        }
+    }
+}
+
+#setup-manual {
+    .cta.minor {
+        display: table;
+        padding: $val4 $val8;
+        margin-top: 8px;
     }
 }
 
@@ -284,7 +353,9 @@ section h2 {
 }
 
 .cta {
-    color: $accentColor;
+    &, &:visited {
+        color: $accentColor;
+    }
     border: solid thin $accentColor;
     padding: $val6 $val8;
     background-color: transparent;
@@ -324,31 +395,25 @@ section h2 {
             }
         }
 
-        #requirements {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            @media all and (max-width: 720px) {
-                display: block;
-
-                li {
-                    display: block;
-
-                }
-            }
-            
-            
+        .requirements {            
             li {
-                flex: 1 1;
+                background: $backgroundStartRGB;
+                padding: $val6;
+                border-radius: $val2;
+                margin-bottom: $val4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 a, span {
-                    display: block;
-                    padding: $val6;
+                    display: table;
+                    padding: $val4 $val8;
                     border-radius: $val4;
                     background-color: $backgroundEndRGB;
                     text-align: center;
                     border: solid 2px transparent;
+                    margin-bottom: $val4;
+                    margin-right: $val6;
                 }
 
                 a:hover {
@@ -361,6 +426,19 @@ section h2 {
                     background: url("/assets/img/link-icon.svg") no-repeat center left 16px;
                     background-size: auto 150%;
                     background-color: $backgroundEndRGB;
+                }
+
+                p {
+                    max-width: 360px;
+                }
+
+                @media all and (max-width: 720px) {
+                    display: block;
+
+                    a,span {
+                        margin-right: auto;
+                        margin-bottom: $val4;
+                    }
                 }
             }
         }
@@ -381,11 +459,7 @@ section h2 {
         }
 
         ul {
-            padding: $val4;
-
-            li {
-                padding: $val4 $val2;
-            }
+            padding: $val4 0;
         }
 
         p {
@@ -456,6 +530,10 @@ section h2 {
 
 }
 
+.video-wrapper {
+    margin-top: $val6;
+    margin-bottom: $val6;
+}
 /* Responsive Video Styles */
 .video-container {
     position: relative;
@@ -519,7 +597,16 @@ section h2 {
             }
 
             a:hover {
-                color: $accentColor;            }
+                color: $accentColor;
+            }
+        }
+
+        @media all and (max-width: 900px) {
+            .footer-section {
+                display: block;
+                margin-right: auto;
+                margin-top: 40px;
+            }
         }
     }
 
@@ -533,5 +620,6 @@ section h2 {
         font-size: small;
         text-align: center;
         max-width: 720px;
+        line-height: 1.5rem;
     }
 }

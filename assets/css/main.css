@@ -148,7 +148,7 @@ h4,
 h5,
 h6,
 button,
-a, #requirements li a, #requirements li span {
+a, .requirements li a, .requirements li span {
   font-family: "Akshar", sans-serif;
 }
 
@@ -169,6 +169,18 @@ a, a:visited {
   text-decoration: none;
 }
 
+.side-by-side {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+@media all and (max-width: 800px) {
+  .side-by-side {
+    display: block;
+  }
+}
+
 .main-section {
   text-align: center;
   min-height: 100svh;
@@ -177,8 +189,14 @@ a, a:visited {
   align-items: center;
   justify-content: center;
   padding-top: 24px;
-  background: url("/assets/img/bg-games-opaque-lg.jpg") no-repeat center top 0px;
+  background: url("/assets/img/bg-games-opaque-lg.jpg") no-repeat center top 0px fixed;
   background-size: cover;
+}
+.main-section .headings {
+  flex: 1;
+  text-align: left;
+  margin-right: 32px;
+  padding: 16px;
 }
 .main-section .logo {
   margin: auto;
@@ -186,8 +204,9 @@ a, a:visited {
   display: inline-block;
 }
 .main-section h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 .main-section h1 b {
   color: #ff530f;
@@ -201,18 +220,40 @@ a, a:visited {
   margin-top: 24px;
   color: #ff530f;
 }
+@media all and (max-width: 900px) {
+  .main-section h1 {
+    font-size: 3rem;
+  }
+  .main-section h2 {
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+@media all and (max-width: 900px) {
+  .main-section h1 {
+    font-size: 2.65rem;
+  }
+  .main-section h2 {
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 780px) {
+  .main-section .side-by-side {
+    display: block;
+  }
+  .main-section .side-by-side .headings {
+    margin-right: auto;
+  }
+}
 
 .downloads {
   padding: 16px;
-}
-.downloads h4 {
-  font-size: 2rem;
+  background-color: rgba(12, 12, 12, 0.63);
+  border-radius: 8px;
 }
 .downloads #quick-setup, .downloads #manual-setup {
-  background-color: rgba(12, 12, 12, 0.63);
-  margin-top: 16px;
   padding: 16px 16px;
-  border-radius: 8px;
 }
 .downloads #quick-setup h3 b, .downloads #manual-setup h3 b {
   display: inline-block;
@@ -230,18 +271,33 @@ a, a:visited {
   display: table;
   margin: auto;
 }
-.downloads #quick-setup {
-  border: solid thin #ff530f;
-}
 .downloads #quick-setup button {
   display: table;
-  width: 75%;
+  width: 100%;
   max-width: 420px;
+  font-size: 1.25rem;
   margin: 16px auto;
 }
 .downloads #quick-setup h3 b {
   background-color: #ff530f;
   color: #0c0c0c;
+}
+@media all and (max-width: 900px) {
+  .downloads #quick-setup button {
+    font-size: 1rem;
+  }
+}
+.downloads #manual-setup {
+  margin-top: 16px;
+}
+.downloads #manual-setup .cta {
+  padding: 16px 16px;
+}
+
+#setup-manual .cta.minor {
+  display: table;
+  padding: 16px 32px;
+  margin-top: 8px;
 }
 
 section h2 {
@@ -250,11 +306,13 @@ section h2 {
 }
 
 .cta {
-  color: #ff530f;
   border: solid thin #ff530f;
   padding: 24px 32px;
   background-color: transparent;
   cursor: pointer;
+}
+.cta, .cta:visited {
+  color: #ff530f;
 }
 .cta:hover {
   background-color: #ff530f;
@@ -285,39 +343,46 @@ section h2 {
   width: auto;
   max-width: 75%;
 }
-#installation .inner-content #requirements {
+#installation .inner-content .requirements li {
+  background: #0c0c0c;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media all and (max-width: 720px) {
-  #installation .inner-content #requirements {
-    display: block;
-  }
-  #installation .inner-content #requirements li {
-    display: block;
-  }
-}
-#installation .inner-content #requirements li {
-  flex: 1 1;
-}
-#installation .inner-content #requirements li a, #installation .inner-content #requirements li span {
-  display: block;
-  padding: 24px;
+#installation .inner-content .requirements li a, #installation .inner-content .requirements li span {
+  display: table;
+  padding: 16px 32px;
   border-radius: 16px;
   background-color: #191919;
   text-align: center;
   border: solid 2px transparent;
+  margin-bottom: 16px;
+  margin-right: 24px;
 }
-#installation .inner-content #requirements li a:hover {
+#installation .inner-content .requirements li a:hover {
   box-shadow: 0px 0px 18px -8px #ff530f;
   color: #ff530f;
   border-color: #ff530f;
 }
-#installation .inner-content #requirements li a {
+#installation .inner-content .requirements li a {
   background: url("/assets/img/link-icon.svg") no-repeat center left 16px;
   background-size: auto 150%;
   background-color: #191919;
+}
+#installation .inner-content .requirements li p {
+  max-width: 360px;
+}
+@media all and (max-width: 720px) {
+  #installation .inner-content .requirements li {
+    display: block;
+  }
+  #installation .inner-content .requirements li a, #installation .inner-content .requirements li span {
+    margin-right: auto;
+    margin-bottom: 16px;
+  }
 }
 #installation .inner-content h2 {
   font-size: 3rem;
@@ -332,10 +397,7 @@ section h2 {
   font-size: 1.5rem;
 }
 #installation .inner-content ul {
-  padding: 16px;
-}
-#installation .inner-content ul li {
-  padding: 16px 8px;
+  padding: 16px 0;
 }
 #installation .inner-content p {
   line-height: 1.75rem;
@@ -392,6 +454,11 @@ section h2 {
   margin: 8px;
   border: solid thin #191919;
   transition: opacity 0.32s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.video-wrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 /* Responsive Video Styles */
@@ -455,6 +522,13 @@ section h2 {
 .footer .footer-content .footer-section a:hover {
   color: #ff530f;
 }
+@media all and (max-width: 900px) {
+  .footer .footer-content .footer-section {
+    display: block;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+}
 .footer .disclaimer {
   font-weight: bold;
   margin-top: 64px;
@@ -464,4 +538,5 @@ section h2 {
   font-size: small;
   text-align: center;
   max-width: 720px;
+  line-height: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
